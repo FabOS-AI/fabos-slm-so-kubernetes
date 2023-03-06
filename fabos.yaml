@@ -38,4 +38,4 @@ version:
   serviceRepositories: []
   deploymentDefinition:
     deploymentType: KUBERNETES
-    manifestFile: manifest.yaml
+    manifestFilename: manifest.yaml
