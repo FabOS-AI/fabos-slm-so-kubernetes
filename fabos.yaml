@@ -1,0 +1,41 @@
+---
+name: Kubernetes Examples
+serviceVendorId: dac52253-a580-479a-84fe-2ca0ae90fb2c
+description: |
+  Kubernetes is an open-source container orchestration system for automating 
+  software deployment, scaling, and management. Originally designed by Google, the project
+  is now maintained by the Cloud Native Computing Foundation.
+  This service offering demonstrates the SLM abilities to deploy on Kubernetes container orchestration systems.
+shortDescription: This service offering demonstrates the SLM abilities to deploy on Kubernetes container orchestration systems.
+coverImageFilename: thumbnail.png
+serviceCategoryName: Application
+version:
+  id: def8f57f-9930-4224-9004-ebc11d0b285d
+  version: 1.0.0_withEnvOptions
+  serviceOptionCategories:
+    - id: 0
+      name: Environment Options
+      serviceOptions:
+        - relation: 'kubernetes-so-demo|demonstrate-envars'
+          key: DEMO_GREETING
+          name: Greeting (demo env var)
+          description: This specifies the greeting demo variable.
+          optionType: ENVIRONMENT_VARIABLE
+          defaultValue: 'Hello from the environment'
+          valueType: STRING
+          required: true
+          editable: true
+        - relation: 'kubernetes-so-demo|demonstrate-envars'
+          key: DEMO_FAREWELL
+          name: Farewell (demo env var)
+          description: This specifies the farewll demo variable.
+          optionType: ENVIRONMENT_VARIABLE
+          defaultValue: 'Such a sweet sorrow'
+          valueType: STRING
+          required: true
+          editable: true
+  serviceRequirements: []
+  serviceRepositories: []
+  deploymentDefinition:
+    deploymentType: KUBERNETES
+    manifestFile: manifest.yaml

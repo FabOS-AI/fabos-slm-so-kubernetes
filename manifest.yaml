@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-so-demo
+  labels:
+    app: demonstrate-envars
+spec:
+  selector:
+    matchLabels:
+      app: demonstrate-envars
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: demonstrate-envars
+        tier: web
+    spec:
+      containers:
+      - name: hello-app-server
+        image: gcr.io/google-samples/node-hello:1.0
+        env:
+        - name: DEMO_GREETING
+          value: "Hello from the environment"
+        - name: DEMO_FAREWELL
+          value: "Such a sweet sorrow"
