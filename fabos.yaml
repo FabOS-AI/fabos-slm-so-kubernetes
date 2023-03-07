@@ -16,24 +16,6 @@ version:
     - id: 0
       name: Environment Options
       serviceOptions:
-        - relation: 'kubernetes-so-demo|demonstrate-envars'
-          key: DEMO_GREETING
-          name: Greeting (demo env var)
-          description: This specifies the greeting demo variable.
-          optionType: ENVIRONMENT_VARIABLE
-          defaultValue: 'Hello from the environment'
-          valueType: STRING
-          required: true
-          editable: true
-        - relation: 'kubernetes-so-demo|demonstrate-envars'
-          key: DEMO_FAREWELL
-          name: Farewell (demo env var)
-          description: This specifies the farewell demo variable.
-          optionType: ENVIRONMENT_VARIABLE
-          defaultValue: 'Such a sweet sorrow'
-          valueType: STRING
-          required: true
-          editable: true
         - relation: '$'
           key: ${{image_tag}}
           name: Image tag (string replace)

@@ -1,25 +1,21 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: bliblablub/alphav1
+kind: RandomKind
 metadata:
   name: kubernetes-so-demo
   labels:
     app: demonstrate-envars
 spec:
-  selector:
-    matchLabels:
-      app: demonstrate-envars
-      tier: web
-  template:
-    metadata:
-      labels:
-        app: demonstrate-envars
-        tier: web
+  workloads:
+  - name: workload1
+    relation:
+      workload: workload2
     spec:
-      containers:
-      - name: hello-app-server
-        image: ${{image_tag}}
-        env:
-        - name: DEMO_GREETING
-          value: "Hello from the environment"
-        - name: DEMO_FAREWELL
-          value: "Such a sweet sorrow"
+      template:
+        metadata:
+          labels:
+            app: demonstrate-envars
+            tier: web
+        spec:
+          containers:
+          - name: hello-app-server
+            image: ${{image_tag}}
