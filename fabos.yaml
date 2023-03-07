@@ -10,8 +10,8 @@ shortDescription: This service offering demonstrates the SLM abilities to deploy
 coverImageFilename: thumbnail.png
 serviceCategoryName: Application
 version:
-  id: def8f57f-9930-4224-9004-ebc11d0b285d
-  version: 1.0.0_withEnvOptions
+  id: c383288a-0008-4ae1-a8fa-be845d3050d1
+  version: 1.0.1_withEnvOptionsAndStringReplace
   serviceOptionCategories:
     - id: 0
       name: Environment Options
@@ -28,9 +28,18 @@ version:
         - relation: 'kubernetes-so-demo|demonstrate-envars'
           key: DEMO_FAREWELL
           name: Farewell (demo env var)
-          description: This specifies the farewll demo variable.
+          description: This specifies the farewell demo variable.
           optionType: ENVIRONMENT_VARIABLE
           defaultValue: 'Such a sweet sorrow'
+          valueType: STRING
+          required: true
+          editable: true
+        - relation: '$'
+          key: ${{image_tag}}
+          name: Image tag (string replace)
+          description: This specifies the image tag used for the container.
+          optionType: STRING_REPLACE
+          defaultValue: 'gcr.io/google-samples/node-hello:1.0'
           valueType: STRING
           required: true
           editable: true

@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: hello-app-server
-        image: gcr.io/google-samples/node-hello:1.0
+        image: ${{image_tag}}
         env:
         - name: DEMO_GREETING
           value: "Hello from the environment"
