@@ -10,7 +10,7 @@ shortDescription: This service offering demonstrates the SLM abilities to deploy
 coverImageFilename: thumbnail.png
 serviceCategoryName: Application
 version:
-  id: c383288a-0008-4ae1-a8fa-be845d3050d1
+  id: 82c278c8-2c75-45d9-b544-0d83596b15e3
   version: 1.0.1_withEnvOptionsAndStringReplace
   serviceOptionCategories:
     - id: 0
